@@ -1,0 +1,31 @@
+package com.example.solid.before;
+
+public class Cartao extends MeioDePagamento {
+    private final String numero;
+    private final String titular;
+
+    public Cartao(String numero, String titular) {
+        this.numero = numero;
+        this.titular = titular;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    @Override
+    public void pagar(double valor) {
+        // Simula cobrança no cartão
+        System.out.println("Cobrando R$ " + valor + " no cartão " + numero.substring(numero.length() - 4) + " (" + titular + ")");
+    }
+
+    @Override
+    public void estornar(double valor) {
+        // Simula estorno no cartão
+        System.out.println("Estornando R$ " + valor + " no cartão " + numero.substring(numero.length() - 4));
+    }
+}
